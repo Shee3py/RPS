@@ -3,66 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="rps.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let humanScore = 0;
-        let computerScore = 0;
-        let result;
-      
 
-        function getComputerChoice(){
-            let randnum =  Math.floor(Math.random() * 3);
-            if (randnum === 0) {
-                return "rock";
-            } else if (randnum === 1) {
-                return "paper";
-            }
-            else {
-                return "scissors";
-            }
-        }
-
-        function getHumanChoice(){
-            let choice;
-            while (!((choice == "paper") || (choice =="rock") || (choice =="scissors"))){
-                choice = prompt("Choose Rock, Paper or Scissors").toLowerCase();
-            }
-            
-            return choice;
-        }
-
-        function playRound(humanChoice, computerChoice){
-            if (humanChoice == computerChoice){
-                return;
-            } else if ((humanChoice == "rock" && computerChoice == "scissors") || (humanChoice == "paper" && computerChoice == "rock") || ((humanChoice == "scissors" && computerChoice == "paper"))) {
-                humanScore = humanScore + 1;
-                return;
-            } else {
-                computerScore = computerScore + 1;
-                return;
-            }
-        }
-
-        function playGame()
-        {
-            for (let i = 0; i < 5; i++){
-                playRound(getHumanChoice(), getComputerChoice())
-            }
-            
-        }
-        playGame();
-
-        if (humanScore > computerScore){
-            result = "You Won !!!";
-        }else if (computerScore > humanScore){
-            result = "You Lost";
-        }else {
-            result = "Draw";
-        }
-
-        console.log(result);
-    </script>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
 </body>
 </html>

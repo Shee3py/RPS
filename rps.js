@@ -5,6 +5,7 @@ let result;
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
+const display = document.querySelector("#display");
 
 function getComputerChoice(){
     let randnum =  Math.floor(Math.random() * 3);
@@ -52,6 +53,7 @@ function playRound(humanChoice, computerChoice){
 }*/
 
 function checkScore(){
+    display.textContent = "Computer Score = " + computerScore + "  Human Score = " + humanScore;
     if ((humanScore === 5) || (computerScore === 5)){
         resultScore();
     }
@@ -65,6 +67,7 @@ function resultScore(){
     }else {
         result = "Draw";
     }
+    display.textContent += result;
     console.log(result);
 }
 
